@@ -1,0 +1,23 @@
+{
+  "name": "muiscplayer",
+  "version": "1.0.0",
+  "description": "An beautiful music player 演示图 ![](./musicPlayer2.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gh": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youngchou1997/muiscPlayer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youngchou1997/muiscPlayer/issues"
+  },
+  "homepage": "https://youngchou1997.github.io/musicPlayer",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
+}
