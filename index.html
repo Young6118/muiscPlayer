@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width,
+                                     initial-scale=1.0,
+                                     maximum-scale=1.0,
+                                     user-scalable=no" />
+        <title>Music Player</title>
+        <link rel="stylesheet" href="./static/css/theme1.css">
+    </head>
+    <body>
+        <header>
+            <img src="./static/img/icon.png" >
+            <span>音乐</span>
+            <div id=id-top-playing>
+                <span>正在播放 ：</span>
+                <span id=id-top-playing-name></span>
+            </div>
+            <div id=id-theme>
+                <div id=id-theme1 data-css="./static/css/theme1.css">
+
+                </div>
+                <div id=id-theme2 data-css="./static/css/theme2.css">
+
+                </div>
+            </div>
+        </header>
+
+        <main id=id-main data-page=0>
+            <div id=id-pre-page class="prePage to-page">
+                <img class=midXY src="./static/img/prePage.png" alt="">
+            </div>
+            <div id=id-next-page class="nextPage to-page">
+                <img class=midXY src="./static/img/nextPage.png" alt="">
+            </div>
+            <audio id='id-audio-player'>
+              <source src="./static/music/丑八怪.mp3">
+            </audio >
+            <section id=id-page-0 class=main-page>
+                <section class=lunpo>
+                    <div id="id-lunpo">
+                        <span class="photo p1" id="id-photo-0"><a>1</a></span>
+                        <span class="photo p2" id="id-photo-1"><a>2</a></span>
+                        <span class="photo p3" id="id-photo-2"><a>3</a></span>
+                        <span class="photo p4" id="id-photo-3"><a>4</a></span>
+                        <span class="photo p5" id="id-photo-4"><a>5</a></span>
+                    </div>
+                </section>
+                <section id=id-recommendation>
+                    <a>推荐歌曲</a>
+                    <div id="id-recommendation-list">
+
+                    </div>
+                </section>
+            </section>
+            <section id=id-page-1 class=main-page>
+                <section class="left-aside aside">
+                    <img id=id-gan src="./static/img/gan.png" alt="">
+                    <div class=music-cd>
+                        <span class="cd-outside midXY">
+                            <span id=id-rotate-cd class="cd midXY bag">
+                                <span class="bag midXY" id=id-cd-cover>
+
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                    <div id=id-music-name>
+                        <span id=id-current-music></span>
+                        <div class=music-funtion>
+                            <span>喜欢</span>
+                            <span>收藏</span>
+                            <span>下载</span>
+                            <span>分享</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="right-aside aside">
+                    <div class=play-list>
+                        播放列表
+                    </div>
+                    <div id=id-music-play-list data-cur=0>
+                        <div class="music-info-title">
+                            <span class=music-name>歌曲</span>
+                            <span class=music-duration>时长</span>
+                            <span class=music-singer>歌手</span>
+                        </div>
+                        <!--<div class="music-info playing">
+                            <span class=music-name>告白asdasd气球</span>
+                            <span class=music-duration>03:35</span>
+                            <span class=music-singer>周杰伦</span>
+                        </div>
+                         <div class=music-info>
+                            <span class=music-name>浮夸</span>
+                            <span class=music-duration>00:35</span>
+                            <span class=music-singer>老朱</span>
+                        </div>
+                        <div class=music-info>
+                            <span class=music-name>open the door</span>
+                            <span class=music-duration>00:12</span>
+                            <span class=music-singer>69</span>
+                        </div>
+                        <div class=music-info>
+                            <span class=music-name>丑八怪</span>
+                            <span class=music-duration>03:22</span>
+                            <span class=music-singer>佛山张学友</span>
+                        </div>
+                        <div class=music-info>
+                            <span class=music-name>只愿一生爱一人</span>
+                            <span class=music-duration>03:42</span>
+                            <span class=music-singer>张学友</span>
+                        </div>
+                        <div class=music-info>
+                            <span class=music-name>爱情买卖</span>
+                            <span class=music-duration>01:36</span>
+                            <span class=music-singer>老朱</span>
+                        </div>
+                        <div class=music-info>
+                            <span class=music-name>粗口歌</span>
+                            <span class=music-duration>10:30</span>
+                            <span class=music-singer>69</span>
+                        </div>
+                        <div class=music-info>
+                            <span class=music-name>唔好听</span>
+                            <span class=music-duration>0:30</span>
+                            <span class=music-singer>佛山张学友</span>
+                        </div> -->
+                    </div>
+                </section>
+                <div id="visualizer_wrapper">
+                    <canvas id='canvas' width="800" height="500"></canvas>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <section id=id-music-control>
+                <img id=id-img-pre src="./static/img/pre2.png" alt="pre">
+                <img id=id-img-play src="./static/img/play2.png" alt="play">
+                <img id=id-img-next src="./static/img/next2.png" alt="next">
+            </section>
+            <section id=id-music-vol-order>
+                <img id=id-music-order data-order=0 src="./static/img/loop.png" alt="">
+                <img src="./static/img/vol.png" alt="">
+                <span class="music-vol vetical"></span>
+                <span class="music-vol vetical" id=id-music-vol></span>
+                <span class="vetical point" id=id-music-vol-point>
+                    <span></span>
+                </span>
+            </section>
+            <section id=id-music-progress>
+                <section id=id-current-time>
+                    00:00
+                </section>
+                <section id=id-duration>
+                    04:00
+                </section>
+                <section id=id-progress>
+                    <span class="music-progress vetical" id=id-full-progress></span>
+                    <span class="music-progress vetical" id=id-current-progress></span>
+                    <span class="vetical point" id=id-music-progress-point>
+                        <span></span>
+                    </span>
+                </section>
+            </section>
+        </footer>
+        <script src=./static/js/visual.js></script>
+        <script src=./static/db/data.js></script>
+        <script src=./static/js/Y_lib.js></script>
+        <script src=./static/js/player.js></script>
+        <script src=./static/js/lunpo.js></script>
+        <script src=./static/js/reconmendation.js></script>
+    </body>
+</html>
